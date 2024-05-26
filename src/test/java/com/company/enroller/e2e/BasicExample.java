@@ -25,11 +25,7 @@ public class BasicExample {
         WebDriver driver = WebDriverManager.chromedriver().create();
         driver.get(url);
         Thread.sleep(5 * 1000);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        TakesScreenshot ts = (TakesScreenshot) driver;
-        File screenshot = ts.getScreenshotAs(OutputType.FILE);
-        Path destination = Paths.get("screenshot.png");
-        Files.move(screenshot.toPath(), destination, REPLACE_EXISTING);
+
 
 
 

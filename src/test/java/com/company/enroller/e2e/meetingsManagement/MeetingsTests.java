@@ -20,26 +20,20 @@ public class MeetingsTests extends BaseTests {
 
     @BeforeEach
     void setup() {
-        this.driver = WebDriverManager.chromedriver().create();
-        this.page = new MeetingsPage(driver);
-        this.loginPage = new LoginPage(driver);
-        this.page.get(Const.HOME_PAGE);
+//        TODO
     }
 
 
     @Test
     @DisplayName("[SPOTKANIA.1] The meeting should be added to your meeting list.")
     void addNewMeeting() {
-        this.loginPage.loginAs(Const.USER_I_NAME);
-        this.page.addNewMeeting(Const.MEETING_III_TITLE, Const.MEETING_DESC);
-        // Asserts
-        assertThat(this.page.getMeetingByTitle(Const.MEETING_III_TITLE)).isNotNull();
+//        TODO
     }
 
 
     @AfterEach
     void exit() {
-        this.page.quit();
+//        TODO
     }
 
 }

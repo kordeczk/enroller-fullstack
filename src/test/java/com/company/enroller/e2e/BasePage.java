@@ -46,11 +46,12 @@ public class BasePage {
     }
 
     public Boolean elementIsPresent(WebElement element) {
-        return this.wait.until(ExpectedConditions.visibilityOf(element)).isDisplayed();
+        //TODO
+        return true;
     }
 
     public String getElementText(WebElement element) {
-        return this.wait.until(ExpectedConditions.visibilityOf(element)).getText();
+        return "";
     }
 
     public void sleep(Integer seconds) {
@@ -62,26 +63,7 @@ public class BasePage {
     }
 
     public WebElement getMeetingByTitle(String meetingName) {
-        String xPath = "//td[contains(text(), '" + meetingName + "')]/parent::tr";
-        try {
-            return this.wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xPath)));
-        } catch (NoSuchElementException ex) {
-            System.out.println("NoSuchElementException has been handled." + ex);
-        } catch (Exception e) {
-            System.out.println("Exception: An unexpected error occurred for meeting title: " + meetingName + e.getMessage());
-        }
-        return null;
-    }
-
-    public List<WebElement> getMeetings() {
-        String meetingSel = "table > tbody > tr";
-        try {
-            return this.wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.cssSelector(meetingSel), 0));
-        } catch (TimeoutException e) {
-            System.out.println(e.getMessage());
-        } catch (Exception e) {
-            System.out.println("Exception: An unexpected error occurred." + e.getMessage());
-        }
+//        TODO
         return null;
     }
 
@@ -95,17 +77,5 @@ public class BasePage {
                         .toList())
                 .orElse(List.of());
     }
-
-//    public WebElement getMeetingByTitle(String meetingName) {
-//        String meetingTitleSel = "td:first-child";
-//        List<WebElement> meetings = this.getMeetings();
-//        for (WebElement meeting : meetings) {
-//            WebElement meetingTitle = meeting.findElement(By.cssSelector(meetingTitleSel));
-//            if (Objects.equals(meetingTitle.getText(), meetingName)) {
-//                return meeting;
-//            }
-//        }
-//        return null;
-//    }
 
 }

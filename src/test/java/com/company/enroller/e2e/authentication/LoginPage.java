@@ -15,27 +15,21 @@ import java.util.List;
 public class LoginPage extends BasePage {
 
     @FindBy(css = "div > input + button")
-    @CacheLookup
     private WebElement loginBtn;
 
-    @FindBy(css = "h1 + div > h2 + button")
-    @CacheLookup
+    @FindBy(css = "TODO")
     private WebElement logoutBtn;
 
-    @FindBy(css = "div > input")
-    @CacheLookup
+    @FindBy(css = "TODO")
     private WebElement loginInput;
 
-    @FindBy(css = "h1 + div > label")
-    @CacheLookup
+    @FindBy(css = "TODO")
     private WebElement loginLabel;
 
-    @FindBy(css = "h1 + div > h2")
-    @CacheLookup
+    @FindBy(css = "TODO")
     private WebElement welcomeLabel;
 
-    @FindBy(xpath = "//*[contains(text(), \"" + Const.NEW_MEETING_BTN_LABEL + "\")]")
-    @CacheLookup
+    @FindBy(xpath = "TODO")
     private WebElement addNewMeetingBtn;
 
 
@@ -44,27 +38,11 @@ public class LoginPage extends BasePage {
     }
 
     public void loginAs(String login) {
-        this.loginInput.sendKeys(login);
-        this.click(this.loginBtn);
+        //TODO
     }
 
     public Boolean loginBtnIsPresent() {
         return this.elementIsPresent(this.loginBtn);
     }
 
-    public Boolean logoutBtnIsPresent() {
-        return this.elementIsPresent(this.logoutBtn);
-    }
-
-    public Boolean addNewMeetingBtnIsPresent() {
-        return this.elementIsPresent(this.addNewMeetingBtn);
-    }
-
-    public String getLoginLabelText() {
-        return this.getElementText(this.loginLabel);
-    }
-
-    public String getWelcomeLabelText() {
-        return this.getElementText(this.welcomeLabel).replaceAll("\\s", "");
-    }
 }
